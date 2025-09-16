@@ -1,0 +1,338 @@
+
+        
+        /* Custom Font Families - Applied via classes */
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-opensans {
+            font-family: 'Open Sans', sans-serif;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Keyframe animations */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Apply animations */
+        .animate-slide-down { animation: slideDown 1s ease-out forwards; }
+        .animate-slide-in { animation: slideIn 0.8s ease-out forwards; }
+        .animate-fade-in { animation: fadeIn 1.2s ease-in forwards; }
+
+        /* Top Header specific styles */
+        .top-header {
+            background-color: #2c3e50; /* Dark blue/grey */
+            color: white;
+            padding: 20px 0;
+            font-size: 18px;
+        }
+        .top-header .info i {
+            color: #f39c12; /* Accent color for icons */
+        }
+        .top-header .header-social a {
+            transition: color 0.3s;
+        }
+        .top-header .header-social a:hover {
+            color: #f39c12; /* Accent color on hover */
+        }
+
+        /* Navigation Bar specific styles */
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f97316; /* Orange-500 */
+            transition: width 0.3s ease;
+        }
+        .link-underline:hover::after {
+            width: 100%;
+        }
+        #mobile-menu {
+            transition: all 0.3s ease;
+        }
+        #mobile-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: slideDown 0.3s ease;
+        }
+
+        .slider-container {
+  height: 80vh;
+  min-height: 600px;
+  width: 100%;
+  position: relative;
+}
+.slider-overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+}
+.slide-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1s ease;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease;
+}
+.gold-btn {
+  transition: all 0.3s ease;
+  border: 2px solid #c6a769;
+}
+.gold-btn:hover {
+  background-color: white;
+  color: #a29061 !important;
+  border-color: white;
+}
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+.slider-dot.active {
+  background-color: white;
+}
+.booking-section {
+  background: rgba(0, 0, 0, 0.473);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  z-index: 40;
+}
+.date-input, .select-wrapper {
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  min-width: 180px;
+}
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c6a769;
+  pointer-events: none;
+}
+.book-now-btn {
+  background: linear-gradient(to right, #c6a769, #a29061);
+  transition: all 0.3s ease;
+}
+.book-now-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(166, 144, 97, 0.4);
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-slide-in {
+  animation: slideIn 0.8s ease forwards;
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+        /* Welcome Section Styling */
+        .welcome-section {
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                        url('imag/welcome\ page.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+        .gold-bar {
+            height: 4px;
+            width: 80px;
+            background: #f39c12; /* Accent color */
+            margin: 20px auto;
+        }
+
+
+        /* Why Choose Us Section - Image Overlay */
+        .feature-image-wrapper {
+            position: relative;
+            cursor: pointer;
+        }
+        .image-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(249, 115, 22, 0.8); /* Tailwind orange-500 with opacity */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .feature-image-wrapper:hover .image-overlay {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: auto;
+        }
+        .feature-image-wrapper img {
+            transition: transform 0.3s ease-in-out;
+        }
+        .feature-image-wrapper:hover img {
+            transform: scale(1.1);
+        }
+        .overlay-icon {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Room Slider specific styles */
+        .room-slider {
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+        .room-slider::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for aesthetic */
+        }
+        .slider-arrow {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .slider-container:hover .slider-arrow {
+            opacity: 1;
+        }
+        .slider-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Happy Clients Section */
+        .stats-section {
+            background-image: url('imag/client page1.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: block; /* Parallax effect */
+        }
+        .stats-section .background-image {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+        }
+
+        /* Gallery Section Styling */
+        .gallery-item-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        .gallery-item-details, .gallery-item-icons {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-item-details, .gallery-item:hover .gallery-item-icons {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .gallery-icon {
+            transition: color 0.2s ease;
+        }
+        .gallery-icon:hover {
+            color: #f59e0b; /* Amber color on hover */
+        }
+        /* Modal specific styles for gallery images */
+        #imageModal {
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+        }
+        #modalImage {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        /* MAX Hotel section background */
+        .hero-section {
+            background-image: url('imag/max page.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+    /* Clients Slider specific styles */
+.clients-slider {
+    display: flex;
+    overflow-x: auto; /* Changed from 'auto' to ensure scrolling works */
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.clients-slider::-webkit-scrollbar {
+    display: none;
+}
+        .client-slide {
+            flex: 0 0 auto; /* Prevent shrinking, maintain width */
+            width: 200px; /* Fixed width for each client logo container */
+            height: 100px; /* Fixed height for each client logo container */
+            scroll-snap-align: start; /* Snap to the start of each slide */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .client-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensure logo fits without cropping */
+        }
+        /* Adjust slider wrapper for smaller screens */
+        @media (max-width: 768px) {
+            .client-slide {
+                width: 150px; /* Smaller width for mobile */
+                height: 80px; /* Smaller height for mobile */
+            }
+        }
+        @media (max-width: 480px) {
+            .client-slide {
+                width: 120px; /* Even smaller width for very small screens */
+                height: 70px; /* Even smaller height for very small screens */
+            }
+        }

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAX Hotel - Your Top Holiday Booker</title>
+    <!-- Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display and Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-opensans bg-gray-100 text-gray-900">
+    <!-- Top Header Section -->
+    <div class="top-header animate-slide-down">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center px-4">
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-5 mb-2 sm:mb-0 text-sm">
+                <p class="flex items-center"><i class="fas fa-map-marker-alt text-[#f39c12] mr-1"></i>35, East St, Chennai, India</p>
+                <p class="flex items-center"><i class="fas fa-phone text-[#f39c12] mr-1"></i><a class="text-white hover:text-[#f39c12] transition-colors" href="tel:+918870189283">+91 8870189283</a></p>
+            </div>
+            <div class="flex items-center gap-3"> 
+                <h5 class="font-normal text-white">Follow</h5>
+                <ul class="flex space-x-4">
+                    <li><a href="#" title="Twitter" aria-label="Twitter" class="text-white hover:text-[#f39c12] transition-colors"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" title="Facebook" aria-label="Facebook" class="text-white hover:text-[#f39c12] transition-colors"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" title="Google"  aria-label="Google" class="text-white hover:text-[#f39c12] transition-colors"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#" title="Linkedin" aria-label="Linkedin" class="text-white hover:text-[#f39c12] transition-colors"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" title="Tripadvisor" aria-label="Tripadvisor" class="text-white hover:text-[#f39c12] transition-colors"><i class="fa fa-tripadvisor"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar Section -->
+    <header id="logo-section" class="text-center py-8 bg-white px-4 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center lg:justify-center">
+            <h1 class="text-5xl font-extrabold text-orange-500 lg:mx-auto">
+                MAX HOTEL
+            </h1>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 bg-orange-100 p-2 rounded-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <nav id="main-nav" class="sticky top-0 z-50 w-full bg-white py-6 transition-all duration-300 ease-in-out shadow-md">
+        <div class="container mx-auto">
+            <!-- Desktop Menu (hidden on mobile/tablet) -->
+            <ul class="hidden lg:flex justify-center space-x-8 text-gray-800 font-bold text-lg">
+                <li><a href="#" class="link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">HOME</a></li>
+                <li><a href="#" class="link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">ABOUT US</a></li>
+                <li><a href="#" class="link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">ROOMS</a></li>
+                <li><a href="#" class="link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">SERVICES</a></li>
+                <li><a href="#" class="link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">GALLERY</a></li>
+                <li><a href="#" class="link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">PAGES</a></li>
+                <li><a href="#" class="link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">CONTACT</a></li>
+            </ul>
+            
+            <!-- Mobile menu button for tablet (hidden on desktop, visible on md+) -->
+            <button id="tablet-menu-button" class="hidden md:flex lg:hidden text-gray-700 bg-orange-100 p-2 rounded-lg ml-auto">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <!-- Mobile menu (hidden by default) -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-4">
+                <ul class="flex flex-col space-y-4 text-gray-800 font-bold text-lg">
+                    <li><a href="#" class="block link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">HOME</a></li>
+                    <li><a href="#" class="block link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">ABOUT US</a></li>
+                    <li><a href="#" class="block link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">ROOMS</a></li>
+                    <li><a href="#" class="block link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">SERVICES</a></li>
+                    <li><a href="#" class="block link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">GALLERY</a></li>
+                    <li><a href="#" class="block link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">PAGES</a></li>
+                    <li><a href="#" class="block link-underline relative uppercase tracking-wider text-gray-700 transition-colors duration-300 hover:text-orange-500">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slider Section (Hero Section) -->
+    <div id="home-revslider" class="slider-section container-fluid relative overflow-hidden">
+  <div class="rev_slider_wrapper relative">
+    <div id="home-slider1" class="rev_slider slider-container relative mx-auto">
+      <div class="slides-container relative w-full h-full">
+
+        <!-- Slide 1 -->
+        <div class="slide absolute inset-0 w-full h-full transition-all duration-1000 opacity-0 z-10" data-index="0">
+          <div class="slide-bg absolute inset-0 w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')"></div>
+          <div class="slider-overlay absolute inset-0 w-full h-full"></div>
+
+          <div class="absolute inset-0 flex items-center justify-center z-10 px-4 md:px-8 lg:px-16 xl:px-24">
+            <div class="text-center max-w-4xl">
+              <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-playfair font-bold uppercase mb-4 animate-slide-in leading-tight break-words">
+                WE ARE YOUR PARTNER TO FIND A
+              </h2>
+              <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-playfair font-light uppercase mb-8 animate-slide-in leading-tight break-words">
+                LUXURY RESORT
+              </h1>
+              <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})" class="gold-btn bg-transparent text-white font-semibold uppercase py-3 px-8 text-base animate-fade-in">
+                EXPLORE IT
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide absolute inset-0 w-full h-full transition-all duration-1000 opacity-0 z-10" data-index="1">
+          <div class="slide-bg absolute inset-0 w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')"></div>
+          <div class="slider-overlay absolute inset-0 w-full h-full"></div>
+
+          <div class="absolute inset-0 flex items-center justify-center z-10 px-4 md:px-8 lg:px-16 xl:px-24">
+            <div class="text-center max-w-4xl">
+              <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-6 animate-slide-in leading-tight break-words">
+                FIFTY HOTELS,<br>TWENTY-TWO COUNTRIES,<br>ONE PHILOSOPHY.
+              </h2>
+              <p class="text-white text-base sm:text-lg italic mb-8 max-w-3xl mx-auto animate-fade-in leading-relaxed">
+                So join us here each week my friends you're sure to get a smile from seven stranded castaways here on Gilligans Isle.
+              </p>
+              <button class="gold-btn bg-transparent text-white font-semibold uppercase py-3 px-8 text-base animate-fade-in">
+                CONTACT US
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide absolute inset-0 w-full h-full transition-all duration-1000 opacity-0 z-10" data-index="2">
+          <div class="slide-bg absolute inset-0 w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')"></div>
+          <div class="slider-overlay absolute inset-0 w-full h-full"></div>
+
+          <div class="absolute inset-0 flex items-center justify-center z-10 px-4 md:px-8 lg:px-16 xl:px-24">
+            <div class="text-center max-w-4xl">
+              <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-8 animate-slide-in leading-tight break-words">
+                DISCOVER A HOTEL THAT DEFINES A<br>NEW DIMENSION OF LUXURY
+              </h2>
+              <button class="gold-btn bg-transparent text-white font-semibold uppercase py-3 px-8 text-base animate-fade-in">
+                CONTACT US
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <button id="slider-prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 text-white bg-black bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-50">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button id="slider-next" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 text-white bg-black bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-50">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <!-- Dots -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+        <span class="slider-dot rounded-full cursor-pointer" data-index="0"></span>
+        <span class="slider-dot rounded-full cursor-pointer" data-index="1"></span>
+        <span class="slider-dot rounded-full cursor-pointer" data-index="2"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Section -->
+<div id="booking" class="booking-section w-full py-6 px-4 md:px-8 relative ">
+  <div class="container mx-auto">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <h5 class="text-5xl font-playfair font-bold text-white">Book <span class="text-gold">your rooms</span></h5>
+        <p class="text-light-gold text-xl mt-1">Experience luxury like never before</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+        <div class="relative flex-1">
+          <div class="date-input flex items-center px-4 py-3 rounded text-white">
+            <i class="far fa-calendar text-gold mr-3"></i>
+            <input type="date" class="w-full bg-transparent placeholder-gray-300 focus:outline-none" />
+          </div>
+        </div>
+
+        <div class="relative flex-1">
+          <div class="date-input flex items-center px-4 py-3 rounded text-white">
+            <i class="far fa-calendar text-gold mr-3"></i>
+            <input type="date" class="w-full bg-transparent placeholder-gray-300 focus:outline-none" />
+          </div>
+        </div>
+
+        <div class="relative flex-1">
+          <div class="select-wrapper flex items-center px-4 py-3 rounded text-white">
+            <i class="fas fa-bed text-orange mr-3"></i>
+            <select class="w-full bg-transparent focus:outline-none text-orange-200">
+              <option>No of Rooms</option>
+              <option>1 Room</option>
+              <option>2 Rooms</option>
+              <option>3 Rooms</option>
+              <option>4+ Rooms</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="book-now-btn text-white font-semibold uppercase py-3 px-8 rounded whitespace-nowrap">
+          Book Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="max-w-7xl mx-auto px-4">
+            <h1 class="text-5xl md:text-6xl font-playfair font-bold mb-8 leading-tight text-[#2c3e50] animate-fade-in">Welcome to Max Hotel Booking</h1>
+            <div class="gold-bar"></div>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto mb-12 font-light text-[#7f8c8d] animate-fade-in " style="animation-delay: 0.3s">
+                Now were up in the big leagues getting' our turn at bat. One two three four five six seven eight Sclemeel schlemazel hasenfeffer incorporated. Love exciting and new. Come aboard were expecting you. Love life's sweetest reward Let it flow it floats back to you.But they got diff'rent strokes. It takes diff'rent strokes are the voyages of the Starship Enterprise.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-40 mb-20">
+                <div class="bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 hover:translate-y-[-10px] hover:bg-amber-100">
+                    <div class="text-5xl text-[#f39c12] mb-4"><i class="fas fa-trophy"></i></div>
+                    <h3 class="text-2xl font-semibold mb-2 text-[#2c3e50] ">Winner of</h3>
+                    <p class="text-gray-600">Best Hotel Booking Website Award 2023</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 hover:translate-y-[-10px] hover:bg-amber-100">
+                    <div class="text-5xl text-[#f39c12] mb-4"><i class="fas fa-star"></i></div>
+                    <h3 class="text-2xl font-semibold mb-2 text-[#2c3e50]">A true</h3>
+                    <p class="text-gray-600">Luxury Hotel and Resorts Collection</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 hover:translate-y-[-10px] hover:bg-amber-100">
+                    <div class="text-5xl text-[#f39c12] mb-4"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-2xl font-semibold mb-2 text-[#2c3e50]">Exceptional</h3>
+                    <p class="text-gray-600">Customer Service and Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Why Choose Us Section -->
+    <section class="py-[200px] bg-white text-center">
+        <div class="container mx-auto px-5">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 uppercase tracking-wide">WHY TO CHOOSE US?</h2>
+            <div class="w-[100px] h-1 bg-orange-500 mx-auto mb-12"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row items-start text-left">
+                    <div class="relative w-full md:w-1/2 overflow-hidden feature-image-wrapper">
+                        <img src="imag/home page 1.webp" alt="The World Class Restaurant" class="w-full h-full object-cover">
+                        <div class="image-overlay">
+                            <i class="fas fa-link overlay-icon"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 w-full md:w-1/2">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">The World Class Restaurant</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Go Speed Racer. Go Speed Racer go! Come and knock on our door. We've waiting for you. Where the kisses are hers and hers and his.</p>
+                        <a href="#" class="inline-block px-6 py-2 bg-orange-500 text-white text-sm uppercase tracking-wide font-semibold rounded hover:bg-orange-600 transition-colors duration-300">READ MORE</a>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row items-start text-left">
+                    <div class="relative w-full md:w-1/2 overflow-hidden feature-image-wrapper">
+                        <img src="imag/choous page 2new.jpg" alt="Luxury Rooms and Resorts" class="w-full h-full object-cover">
+                        <div class="image-overlay">
+                            <i class="fas fa-link overlay-icon"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 w-full md:w-1/2">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Luxury Rooms and Resorts</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Go Speed Racer. Go Speed Racer go! Come and knock on our door. We've waiting for you. Where the kisses are hers and hers and his.</p>
+                        <a href="#" class="inline-block px-6 py-2 bg-orange-500 text-white text-sm uppercase tracking-wide font-semibold rounded hover:bg-orange-600 transition-colors duration-300">READ MORE</a>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row items-start text-left">
+                    <div class="relative w-full md:w-1/2 overflow-hidden feature-image-wrapper">
+                        <img src="imag/choous page3.avif" alt="The Wellness and SPA" class="w-full h-full object-cover">
+                        <div class="image-overlay">
+                            <i class="fas fa-link overlay-icon"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 w-full md:w-1/2">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">The Wellness and SPA</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Go Speed Racer. Go Speed Racer go! Come and knock on our door. We've waiting for you. Where the kisses are hers and hers and his.</p>
+                        <a href="#" class="inline-block px-6 py-2 bg-orange-500 text-white text-sm uppercase tracking-wide font-semibold rounded hover:bg-orange-600 transition-colors duration-300">READ MORE</a>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row items-start text-left">
+                    <div class="relative w-full md:w-1/2 overflow-hidden feature-image-wrapper">
+                        <img src="imag/choous page 4.avif" alt="International Cuisine" class="w-full h-full object-cover">
+                        <div class="image-overlay">
+                            <i class="fas fa-link overlay-icon"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 w-full md:w-1/2">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">International Cuisine</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Go Speed Racer. Go Speed Racer go! Come and knock on our door. We've waiting for you. Where the kisses are hers and hers and his.</p>
+                        <a href="#" class="inline-block px-6 py-2 bg-orange-500 text-white text-sm uppercase tracking-wide font-semibold rounded hover:bg-orange-600 transition-colors duration-300">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Slider Modal (for Why Choose Us images) -->
+    <div id="imageSliderModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="relative bg-white p-0 rounded-lg max-w-3xl w-full mx-auto">
+            <button id="closeSliderBtn" class="absolute -top-3 -right-3 text-white text-3xl bg-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-600 z-50">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modal-slider-content" class="flex overflow-hidden">
+                <img src="imag/home page 1.webp" class="w-full flex-shrink-0 object-contain" alt="Slider Image 1">
+                <img src="imag/choous page 2.webp" class="w-full flex-shrink-0 object-contain" alt="Slider Image 2">
+                <img src="imag/choous page3.avif" class="w-full flex-shrink-0 object-contain" alt="Slider Image 3">
+                <img src="imag/choous page 4.avif" class="w-full flex-shrink-0 object-contain" alt="Slider Image 4">
+            </div>
+            <button id="modal-prev-btn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600 text-2xl">&lt;</button>
+            <button id="modal-next-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-600 text-2xl">&gt;</button>
+        </div>
+    </div>
+    
+    <!-- Rooms Section -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 uppercase">Our Luxurious Rooms</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>          
+            
+            <div class="relative slider-container group">
+                <div class="room-slider flex overflow-x-auto snap-x snap-mandatory space-x-6 pb-8" style="-webkit-overflow-scrolling: touch;">
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 snap-start">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="imag/rooms page1.avif" 
+                                    alt="Standard Room" 
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                <span class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Best Value</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Standard Room</h3>
+                                <p class="text-amber-600 font-bold mb-3">$120/night</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-user text-amber-500 mr-1 text-xs"></i> 2 Guests
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-bed text-amber-500 mr-1 text-xs"></i> 1 King Bed
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-ruler-combined text-amber-500 mr-1 text-xs"></i> 28m²
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 mb-5">Comfortable and cozy with all essential amenities for a pleasant stay.</p>
+                                <a href="#" class="inline-block px-6 py-2 bg-amber-500 text-white font-semibold rounded-full border-2 border-amber-500 hover:bg-transparent hover:text-amber-500 transition-colors duration-300">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 snap-start">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="imag/rooms page 2.jpg" 
+                                    alt="Deluxe Room" 
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                <span class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Popular</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Deluxe Room</h3>
+                                <p class="text-amber-600 font-bold mb-3">$180/night</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-user text-amber-500 mr-1 text-xs"></i> 3 Guests
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-bed text-amber-500 mr-1 text-xs"></i> 2 Queen Beds
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-ruler-combined text-amber-500 mr-1 text-xs"></i> 35m²
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 mb-5">Spacious and elegant, offering enhanced comfort and beautiful views.</p>
+                                <a href="#" class="inline-block px-6 py-2 bg-amber-500 text-white font-semibold rounded-full border-2 border-amber-500 hover:bg-transparent hover:text-amber-500 transition-colors duration-300">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 snap-start">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="imag/rooms page 3.avif" 
+                                    alt="Executive Suite" 
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                <span class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Luxury</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Executive Suite</h3>
+                                <p class="text-amber-600 font-bold mb-3">$250/night</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-user text-amber-500 mr-1 text-xs"></i> 4 Guests
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-bed text-amber-500 mr-1 text-xs"></i> 1 King + Sofa Bed
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-ruler-combined text-amber-500 mr-1 text-xs"></i> 55m²
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 mb-5">Our most luxurious option with separate living area and premium amenities.</p>
+                                <a href="#" class="inline-block px-6 py-2 bg-amber-500 text-white font-semibold rounded-full border-2 border-amber-500 hover:bg-transparent hover:text-amber-500 transition-colors duration-300">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 snap-start">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="imag/rooms page 4.avif" 
+                                    alt="Family Suite" 
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Family</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Family Suite</h3>
+                                <p class="text-amber-600 font-bold mb-3">$220/night</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-user text-amber-500 mr-1 text-xs"></i> 5 Guests
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-bed text-amber-500 mr-1 text-xs"></i> 2 King Beds
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-ruler-combined text-amber-500 mr-1 text-xs"></i> 45m²
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 mb-5">Perfect for families with spacious layout and child-friendly amenities.</p>
+                                <a href="#" class="inline-block px-6 py-2 bg-amber-500 text-white font-semibold rounded-full border-2 border-amber-500 hover:bg-transparent hover:text-amber-500 transition-colors duration-300">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 snap-start">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="imag/rooms page 5.avif" 
+                                    alt="Presidential Suite" 
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                <span class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">VIP</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Presidential Suite</h3>
+                                <p class="text-amber-600 font-bold mb-3">$350/night</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-user text-amber-500 mr-1 text-xs"></i> 2 Guests
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-bed text-amber-500 mr-1 text-xs"></i> 1 King Bed
+                                    </span>
+                                    <span class="flex items-center text-gray-600 text-sm">
+                                        <i class="fas fa-ruler-combined text-amber-500 mr-1 text-xs"></i> 75m²
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 mb-5">Ultimate luxury with premium services, private lounge and stunning views.</p>
+                                <a href="#" class="inline-block px-6 py-2 bg-amber-500 text-white font-semibold rounded-full border-2 border-amber-500 hover:bg-transparent hover:text-amber-500 transition-colors duration-300">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="room-prev-btn" class="slider-arrow absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white w-12 h-12 rounded-full shadow-md flex items-center justify-center text-gray-700 hover:text-amber-500 transition-colors duration-300 z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="room-next-btn" class="slider-arrow absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white w-12 h-12 rounded-full shadow-md flex items-center justify-center text-gray-700 hover:text-amber-500 transition-colors duration-300 z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Happy Clients Section -->
+    <section class="stats-section py-28 relative mt-20 mb-20"> 
+        <div class="absolute inset-0 bg-gray-800 background-image bg-opacity-70"></div>
+        <div class="container mx-auto px-4 relative z-10 text-white text-center"> 
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center p-4">
+                    <i class="fas fa-users text-5xl mb-4 text-amber-500"></i> 
+                    <div class="stat-number text-5xl font-bold mb-2" data-target="1434">0</div>
+                    <p class="text-lg uppercase tracking-wider">Happy Clients</p>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                    <i class="fas fa-hotel text-5xl mb-4 text-amber-500"></i>
+                    <div class="stat-number text-5xl font-bold mb-2" data-target="74">0</div>
+                    <p class="text-lg uppercase tracking-wider">Hotels</p>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                    <i class="fas fa-handshake text-5xl mb-4 text-amber-500"></i>
+                    <div class="stat-number text-5xl font-bold mb-2" data-target="726">0</div>
+                    <p class="text-lg uppercase tracking-wider">Our Employees</p>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                    <i class="fas fa-trophy text-5xl mb-4 text-amber-500"></i>
+                    <div class="stat-number text-5xl font-bold mb-2" data-target="46">0</div>
+                    <p class="text-lg uppercase tracking-wider">Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-36 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 uppercase">Our Gallery</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto mb-8"></div>
+                <div class="flex flex-wrap justify-center gap-4 text-gray-700 font-semibold text-lg">
+                    <button class="px-5 py-2 rounded-full border border-gray-300 hover:bg-amber-500 hover:text-white transition-colors duration-300 active-category" data-category="all">ALL</button>
+                    <button class="px-5 py-2 rounded-full border border-gray-300 hover:bg-amber-500 hover:text-white transition-colors duration-300" data-category="rooms">ROOMS</button>
+                    <button class="px-5 py-2 rounded-full border border-gray-300 hover:bg-amber-500 hover:text-white transition-colors duration-300" data-category="resorts">RESORTS</button>
+                    <button class="px-5 py-2 rounded-full border border-gray-300 hover:bg-amber-500 hover:text-white transition-colors duration-300" data-category="restaurant">RESTAURANT</button>
+                    <button class="px-5 py-2 rounded-full border border-gray-300 hover:bg-amber-500 hover:text-white transition-colors duration-300" data-category="spa">SPA & POOL</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md group" data-category="resorts">
+                    <img src="imag/gallery page 1.jpg" alt="Beach View" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="gallery-item-overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
+                        <div class="gallery-item-details text-center mb-4">
+                            <h3 class="text-xl font-bold">Beach View</h3>
+                            <p class="text-sm">Victoria</p>
+                        </div>
+                        <div class="gallery-item-icons flex gap-5">
+                            <i class="fas fa-search gallery-icon cursor-pointer view-image" data-src="imag/gallery page 1.jpg"></i>
+                            <i class="fas fa-share-alt gallery-icon cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md group" data-category="restaurant">
+                    <img src="imag/Gallery  page 2.jpg" alt="Exotic Food" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="gallery-item-overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
+                        <div class="gallery-item-details text-center mb-4">
+                            <h3 class="text-xl font-bold">Fine Dining</h3>
+                            <p class="text-sm">Restaurant</p>
+                        </div>
+                        <div class="gallery-item-icons flex gap-5">
+                            <i class="fas fa-search gallery-icon cursor-pointer view-image" data-src="imag/Gallery  page 2.jpg"></i>
+                            <i class="fas fa-share-alt gallery-icon cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md group" data-category="spa">
+                    <img src="imag/g.jpg" alt="Poolside Relax" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="gallery-item-overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
+                        <div class="gallery-item-details text-center mb-4">
+                            <h3 class="text-xl font-bold">Pool Area</h3>
+                            <p class="text-sm">Recreation</p>
+                        </div>
+                        <div class="gallery-item-icons flex gap-5">
+                            <i class="fas fa-search gallery-icon cursor-pointer view-image" data-src="imag/g.jpg"></i>
+                            <i class="fas fa-share-alt gallery-icon cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md group" data-category="rooms">
+                    <img src="imag/gallery  page 3.png" alt="Luxury Room" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="gallery-item-overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
+                        <div class="gallery-item-details text-center mb-4">
+                            <h3 class="text-xl font-bold">Deluxe Room</h3>
+                            <p class="text-sm">Comfort</p>
+                        </div>
+                        <div class="gallery-item-icons flex gap-5">
+                            <i class="fas fa-search gallery-icon cursor-pointer view-image" data-src="imag/gallery  page 3.png"></i>
+                            <i class="fas fa-share-alt gallery-icon cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md group" data-category="spa">
+                    <img src="imag/gallery  page 4.jpeg" alt="Relaxing Spa" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="gallery-item-overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
+                        <div class="gallery-item-details text-center mb-4">
+                            <h3 class="text-xl font-bold">Relaxing Spa</h3>
+                            <p class="text-sm">Wellness</p>
+                        </div>
+                        <div class="gallery-item-icons flex gap-5">
+                            <i class="fas fa-search gallery-icon cursor-pointer view-image" data-src="imag/gallery  page 4.jpeg"></i>
+                            <i class="fas fa-share-alt gallery-icon cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md group" data-category="resorts">
+                    <img src="imag/gallery page 5.jpg" alt="Grand Resort" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="gallery-item-overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
+                        <div class="gallery-item-details text-center mb-4">
+                            <h3 class="text-xl font-bold">Grand Resort</h3>
+                            <p class="text-sm">Architecture</p>
+                        </div>
+                        <div class="gallery-item-icons flex gap-5">
+                            <i class="fas fa-search gallery-icon cursor-pointer view-image" data-src="imag/gallery page 5.jpg"></i>
+                            <i class="fas fa-share-alt gallery-icon cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Image Modal -->
+    <div id="imageModal" class="fixed inset-0 hidden items-center justify-center z-50">
+        <div class="relative bg-white p-2 rounded-lg max-w-4xl w-full mx-auto">
+            <button id="closeModal" class="absolute -top-3 -right-3 text-white text-3xl bg-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-600 z-50">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImage" src="" alt="Full size image" class="w-full h-auto max-h-[80vh] object-contain">
+        </div>
+    </div>
+
+    <!-- MAX Hotel - Your Top Holiday Booker Section -->
+    <section class="hero-section relative h-[600px] md:h-[800px] flex items-center justify-center text-white ">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="z-10 text-center px-4 md:px-0">
+            <div class="bg-black bg-opacity-40 p-8 md:p-12 max-w-6xl mx-auto rounded-lg shadow-xl">
+                <h1 class="text-5xl md:text-5xl font-bold mb-4 leading-tight">
+                    We are MAX, Your top Holiday Booker
+                </h1>
+                <p class="text-base md:text-lg mb-8 max-w-2xl mx-auto">
+                    Thank you for being a friend. Travelled down the road and back again. Your heart
+                    is true you're a pal and a confidant.
+                </p>
+                <button class="bg-amber-00 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 uppercase tracking-wide">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-36">
+        <div class="container mx-auto px-4">
+            <h2 class="text-6xl font-extrabold text-gray-800 text-center mb-10">OUR TRUSTED CLIENTS</h2>
+            <div class="relative mx-auto bg-white rounded-lg shadow-xl  p-20 slider-wrapper"> 
+                <div class="clients-slider">
+                    <!-- Client slides with new image URLs -->
+                    <div class="client-slide">
+                        <img src="imag/t-cleit.jpg" alt="Hyatt Hotels">
+                    </div>
+                    <div class="client-slide">
+                        <img src="imag/t-cleit2.avif" alt="Marriott">
+                    </div>
+                    <div class="client-slide">
+                        <img src="imag/t-cleint3.webp" alt="Hilton">
+                    </div>
+                    <div class="client-slide">
+                        <img src="imag/t-cleint4.avif" alt="Sheraton">
+                    </div>
+                    <div class="client-slide">
+                        <img src="imag/t-cleint5.jpg" alt="IHG">
+                    </div>
+                    <div class="client-slide">
+                        <img src="imag/t-cliant6.jpg" alt="Accor">
+                    </div>
+                    <div class="client-slide">
+                        <img src="imag/t-client7.jpg" alt="Radisson">
+                    </div>
+                    <div class="client-slide">
+                        <img src="imag/t-client8.jpg" alt="Wyndham">
+                    </div>
+                </div>
+                
+                <button id="client-prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-gray-600 hover:bg-gray-200 focus:outline-none rounded-full w-10 h-10 flex items-center justify-center -ml-5 shadow-lg z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button id="client-next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-gray-600 hover:bg-gray-200 focus:outline-none rounded-full w-10 h-10 flex items-center justify-center -mr-5 shadow-lg z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Section -->
+    <section class="py-16 bg-gray-100 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-semibold mb-2 text-gray-900 uppercase tracking-wide">UPCOMING EVENTS</h2>
+            <div class="flex justify-center mb-10">
+                <hr class="w-24 border-t-2 border-gray-400">
+                <span class="mx-2 text-gray-400">◆</span>
+                <hr class="w-24 border-t-2 border-gray-400">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden text-left relative transition-transform transform hover:scale-105 duration-300 ease-in-out">
+                    <img src="imag/event page1.jpg" alt="Colorful Night Events" class="w-full h-52 object-cover">
+                    <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-md text-sm font-bold flex flex-col items-center">
+                        <span class="text-xl">15</span>
+                        <span>MAY</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">COLORFULL NIGHT EVENTS</h3>
+                        <div class="flex items-center text-gray-600 text-sm mb-2">
+                            <svg class="w-4 h-4 mr-1 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                            <span>Victoria, USA</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 text-sm mb-4">
+                            <svg class="w-4 h-4 mr-1 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+                            <span>Mike Hurry</span>
+                        </div>
+                        <a href="#" class="inline-block text-orange-500 hover:text-orange-600 font-medium transition duration-300">VIEW DETAIL ></a>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden text-left relative transition-transform transform hover:scale-105 duration-300 ease-in-out">
+                    <img src="imag/event page 2.webp" alt="Movie Fair" class="w-full h-52 object-cover">
+                    <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-md text-sm font-bold flex flex-col items-center">
+                        <span class="text-xl">25</span>
+                        <span>MAY</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">MOVIE FAIR</h3>
+                        <div class="flex items-center text-gray-600 text-sm mb-2">
+                            <svg class="w-4 h-4 mr-1 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                            <span>Victoria, USA</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 text-sm mb-4">
+                            <svg class="w-4 h-4 mr-1 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+                            <span>Mike Hurry</span>
+                        </div>
+                        <a href="#" class="inline-block text-orange-500 hover:text-orange-600 font-medium transition duration-300">VIEW DETAIL ></a>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden text-left relative transition-transform transform hover:scale-105 duration-300 ease-in-out">
+                    <img src="imag/event page 3.avif" alt="Summer Holiday Trip" class="w-full h-52 object-cover">
+                    <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-md text-sm font-bold flex flex-col items-center">
+                        <span class="text-xl">28</span>
+                        <span>MAY</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">SUMMER HOLIDAY TRIP</h3>
+                        <div class="flex items-center text-gray-600 text-sm mb-2">
+                            <svg class="w-4 h-4 mr-1 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                            <span>Victoria, USA</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 text-sm mb-4">
+                            <svg class="w-4 h-4 mr-1 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+                            <span>Mike Hurry</span>
+                        </div>
+                        <a href="#" class="inline-block text-orange-500 hover:text-orange-600 font-medium transition duration-300">VIEW DETAIL ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-6 py-12">
+            <!-- Main footer content with 4 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About Us -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold uppercase mb-4">About Our Max</h3>
+                    <div class="w-10 h-1 bg-orange-500 mb-4"></div>
+                    <p class="text-sm leading-relaxed">
+                        That this group would somehow form a family that's the way we all became the Brady Bunch. Doin' it our way. There's nothing we wont try never heard word.
+                    </p>
+                    <!-- Social Media Icons -->
+                    <div class="flex space-x-4 mt-6 ">
+                        <a href="#" class="text-gray-700 p-[5px] rounded-md bg-amber-50 hover:text-orange-800 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-700 p-[5px] rounded-md bg-amber-50 hover:text-orange-800 transition-colors duration-300">
+                           <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-700 p-[5px] rounded-md bg-amber-50 hover:text-orange-800 transition-colors duration-300">
+                           <i class="fab fa-linkedin-in"></i>
+                        </a>
+                         <a href="#" class="text-gray-700 p-[5px] rounded-md bg-amber-50 hover:text-orange-800 transition-colors duration-300">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Useful Links -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold uppercase mb-4">Useful Links</h3>
+                    <div class="w-10 h-1 bg-orange-500 mb-4"></div>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Our Packages</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Popular Destination</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Top Destination</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Latest News</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Our Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Opening Hours -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold uppercase mb-4">Opening Hours</h3>
+                    <div class="w-10 h-1 bg-orange-500 mb-4"></div>
+                    <ul class="space-y-3 text-sm">
+                        <li><span>Monday - 9:00AM to 6:00PM</span></li>
+                        <li><span>Tuesday - 9:00AM to 6:00PM</span></li>
+                        <li><span>Wednesday - 9:00AM to 6:00PM</span></li>
+                        <li><span>Thursday - 9:00AM to 6:00PM</span></li>
+                        <li><span>Friday - 9:00AM to 6:00PM</span></li>
+                        <li><span>Saturday - 9:00AM to 6:00PM</span></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Popular Destination -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold uppercase mb-4">Popular Destination</h3>
+                    <div class="w-10 h-1 bg-orange-500 mb-4"></div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <img src="imag/populerr page1.avif" alt="Beach Destination" class="rounded-md hover:opacity-80 transition-opacity duration-300">
+                        <img src="imag/populer 2.avif" alt="Sunset Destination" class="rounded-md hover:opacity-80 transition-opacity duration-300">
+                        <img src="imag/populer page 2.jpg" alt="Hill Station" class="rounded-md hover:opacity-80 transition-opacity duration-300">
+                        <img src="imag/populer page 4.jpeg" alt="Docks" class="rounded-md hover:opacity-80 transition-opacity duration-300">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sub-footer with copyright and links -->
+            <div class="mt-12 pt-8 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center text-sm">
+                <p class="mb-4 sm:mb-0">&copy; 2025 ALL RIGHTS RESERVED</p>
+                <p class="mb-4 sm:mb-0">Developer By "ARULPRAKASH"</p>
+                <ul class="flex flex-wrap justify-center space-x-6">
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">HOME</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">ABOUT US</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">ROOMS</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">SERVICES</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">GALLERY</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!--Linked js-->
+    <script src="script.js"></script>
+</body>
+</html>
